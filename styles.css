@@ -86,10 +86,12 @@ nav {
 
     .nav-links {
         position: fixed;
-        right: -100%;
+        left: -100%;
+        /* Change from right to left */
         top: 70px;
         flex-direction: column;
         background-color: white;
+        /* Light mode background */
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -97,7 +99,8 @@ nav {
     }
 
     .nav-links.nav-active {
-        right: 0;
+        left: 0;
+        /* Change from right to left */
     }
 
     .nav-links li {
@@ -432,9 +435,7 @@ footer {
 
 /* Dark Mode Styles */
 .dark-mode .home {
-    background: linear-gradient(135deg,
-            #1a1a2e,
-            #16213e);
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }
@@ -466,7 +467,6 @@ footer {
 .dark-mode .cta-button:hover {
     background-color: #4DFFF3;
     transform: scale(1.1);
-    /* Zoom effect on hover */
 }
 
 body.dark-mode {
@@ -479,7 +479,7 @@ body.dark-mode {
 
 /* Dark mode navigation */
 .dark-mode nav {
-    background-color: #2c2c2c;
+    background-color: #0f3460;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
@@ -487,8 +487,14 @@ body.dark-mode {
     color: var(--primary-color);
 }
 
+.dark-mode .nav-links {
+    background-color: #0f3460;
+
+}
+
 .dark-mode .nav-links a {
-    color: var(--text-color);
+    color: #e0e0e0;
+
 }
 
 /* Dark mode sections */
@@ -498,7 +504,7 @@ body.dark-mode {
 }
 
 .dark-mode .project-card {
-    background-color: #2c2c2c;
+    background-color: #0f3460;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
@@ -556,122 +562,6 @@ body.dark-mode {
     color: var(--primary-color);
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 1024px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image {
-        margin-bottom: 30px;
-    }
-
-    .project-grid,
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    .project-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .home-content h1 {
-        font-size: 2rem;
-    }
-
-    .about-content {
-        width: 100%;
-    }
-}
-
-/* Accessibility and Focus Styles */
-a:focus,
-button:focus {
-    outline: none;
-}
-
-/* Scroll Progress Bar */
-body {
-    position: relative;
-}
-
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    width: 0;
-    background-color: var(--secondary-color);
-    z-index: 1100;
-    transition: width 0.2s ease;
-}
-
-/* Error and Success Form Messaging */
-.form-message {
-    text-align: center;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 5px;
-}
-
-.form-message.success {
-    background-color: #2ecc71;
-    color: white;
-}
-
-.form-message.error {
-    background-color: #e74c3c;
-    color: white;
-}
-
-/* Dark Mode Toggle */
-#dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1200;
-    transition: transform 0.3s ease;
-}
-
-#dark-mode-toggle:hover {
-    transform: scale(1.1);
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    --primary-color: #4ecdc4;
-    --secondary-color: #45b7d1;
-    --bg-color: #1a1a2e;
-    --text-color: #e0e0e0;
-    background-color: #16213e;
-}
-
-.dark-mode nav {
-    background-color: #0f3460;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .nav-links a {
-    color: #e0e0e0;
-}
-
-.dark-mode .project-card {
-    background-color: #0f3460;
-}
-
-.dark-mode .social-icon {
-    color: #4ecdc4;
-}
-
 /* Animation Keyframes */
 @keyframes fadeIn {
     from {
@@ -719,6 +609,79 @@ body.dark-mode {
 .section-divider {
     width: 100px;
     height: 4px;
-    background-color: var (--primary-color);
+    background-color: var(--primary-color);
     margin: 20px auto;
+}
+
+/* Accessibility and Focus Styles */
+a:focus,
+button:focus {
+    outline: none;
+}
+
+/* Scroll Progress Bar */
+body {
+    position: relative;
+}
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: var(--secondary-color);
+    z-index: 1100;
+    transition: width 0.2s ease;
+}
+
+/* Error and Success Form Messaging */
+.form-message {
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.form-message.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.form-message.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-bottom: 30px;
+    }
+
+    .project-grid,
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .project-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        width: 100%;
+    }
 }
